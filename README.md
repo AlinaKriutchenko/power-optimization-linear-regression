@@ -1,15 +1,39 @@
 # power-optimization-linear-regression
 
-# install:
+# Install:
 pip install pandas
 pip install numpy
 pip install matplotlib
 pip install scikit-learn
 
-# to run the code:
+# To run the code:
 python main.py
 
-# limitations:
+
+# Approach
+
+**Model Choice**
+Linear regression was selected due to its simplicity and interpretability. More complex models might provide better prediction, but for the purpose of understanding the relationship between inputs and power, linear regression suffices.
+
+**Optimization Range**
+The chosen GPH ranges (180-600 and 300-1000) respected the machines' capabilities. This avoided unrealistic or inefficient production rates while optimizing power consumption.
+
+**Objective Function**
+The main goal was to minimize power consumption while meeting the target GPH. Minimizing power aligns with energy conservation objectives, contributing to cost savings and reduced environmental impact.
+
+**Power Calculation**
+Using trained models to estimate power consumption during optimization ensured accurate predictions based on the relationships learned from the dataset. This approach reflected the real-world power usage of the machines.
+
+**Metric Selection**
+Mean Squared Error (MSE) was chosen to assess model accuracy. It quantifies the average squared difference between predicted and actual power, giving insight into how well the model predicts power values. MSE is a widely adopted metric in regression tasks.
+
+**Iteration Approach**
+The iterative approach was used to exhaustively search for optimal GPH values within the specified ranges. It aimed to find the configuration that minimizes power while meeting the production target.
+
+**Evaluation Comparison**Comparing power consumption before and after optimization provided a tangible measure of the optimization's impact.
+
+
+# Limitations:
 1. Linear Model Assumption: The linear regression models used may not capture potential nonlinear relationships between inputs and power consumption.
 2. Data Filtering Impact: Excluding data outside the 'check' range might limit the models' representativeness and generalizeability.
 3. Limited Generalization: Models might not perform well on new data or different conditions without cross-validation or external validation.
@@ -21,17 +45,16 @@ python main.py
 9. Real-World Feasibility: Optimized GPH values might not align with practical constraints or maintenance considerations.
 10. Unconsidered Factors: Factors like temperature, humidity, and maintenance schedules were omitted from the analysis.
 
-# conclusions:
-Optimal GPH Values:
+# Conclusions:
+**Optimal GPH Values:**
 - After optimization, the optimal Goods Per Hour (GPH) values were determined to minimize power consumption while achieving the target total GPH of 9,000 for the factory.
 - Optimal GPH for Machine Type #1: 600
 - Optimal GPH for Machine Type #2: 300
 
-Total Power Consumption:
+**Total Power Consumption:**
 - The total power consumption of the factory was calculated using the optimized GPH values.
 - Total Power Consumption Before Optimization: 1874.42
 - Total Power Consumption After Optimization: 1521.94
 
-Power Savings:
+**Power Savings:**
 - By implementing the optimized GPH values, the factory achieved a power savings of 352.49 units.
-

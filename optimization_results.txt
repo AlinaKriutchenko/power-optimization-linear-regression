@@ -1,0 +1,21 @@
+Machine 1 - GPH: 600
+Machine 2 - GPH: 600
+Machine 3 - GPH: 600
+Machine 4 - GPH: 600
+Machine 5 - GPH: 600
+Machine 6 - GPH: 600
+Machine 7 - GPH: 600
+Machine 8 - GPH: 600
+Machine 9 - GPH: 600
+Machine 10 - GPH: 600
+Machine 11 - GPH: 300
+Machine 12 - GPH: 300
+Machine 13 - GPH: 300
+Machine 14 - GPH: 300
+Machine 15 - GPH: 300
+Machine 16 - GPH: 300
+Machine 17 - GPH: 300
+Machine 18 - GPH: 300
+Machine 19 - GPH: 300
+Machine 20 - GPH: 300
+Total Power Consumption: 1521.94

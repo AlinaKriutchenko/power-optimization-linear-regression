@@ -1,0 +1,2 @@
+Machine type #1 - MSE: 11.58
+Machine type #2 - MSE: 96.94
