@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import random
+
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -20,7 +22,6 @@ data_machine1_filtered = data_machine1[(data_machine1['check'] >= 90) & (data_ma
 
 # Filter data for machine type #2
 data_machine2_filtered = data_machine2[(data_machine2['check'] >= 90) & (data_machine2['check'] <= 110)]
-
 
 
 def train_model(data, machine_type):
@@ -89,23 +90,26 @@ optimal_GPH_machine1 = 0
 optimal_GPH_machine2 = 0
 lowest_total_power = float('inf')
 
-# Iterate through all possible GPH values for each machine type and find the optimal configuration
+# Iterates through all possible GPH values for each machine type and find the optimal configuration
 for GPH_machine1 in range(180, 601):
     for GPH_machine2 in range(300, 1001):
-        total_power = calculate_total_power(model_machine1, model_machine2, [GPH_machine1] * 10, [GPH_machine2] * 10)
-        if total_power < lowest_total_power and (GPH_machine1 * 10 + GPH_machine2 * 10) == target_total_GPH:
+        # Introduce randomness to initial GPH values for each machine type
+        GPH_machine1_initial = GPH_machine1 + random.randint(-20, 20)  # Adding random value between -20 and 20
+        GPH_machine2_initial = GPH_machine2 + random.randint(-20, 20)  # Adding random value between -20 and 20
+        
+        total_power = calculate_total_power(model_machine1, model_machine2, [GPH_machine1_initial] * 10, [GPH_machine2_initial] * 10)
+        if total_power < lowest_total_power and (GPH_machine1_initial * 10 + GPH_machine2_initial * 10) == target_total_GPH:
             lowest_total_power = total_power
-            optimal_GPH_machine1 = GPH_machine1
-            optimal_GPH_machine2 = GPH_machine2
+            optimal_GPH_machine1 = GPH_machine1_initial
+            optimal_GPH_machine2 = GPH_machine2_initial
 
-# Print the optimal GPH values and total power
+# Prints the optimal GPH values and total power
 print(f'Optimal GPH for Machine Type #1: {optimal_GPH_machine1}')
 print(f'Optimal GPH for Machine Type #2: {optimal_GPH_machine2}')
 print(f'Total Power: {lowest_total_power:.2f}')
 
-# Optimization evaluation
 
-# Calculate total power consumption before optimization
+# Optimization evaluation. Calculate total power consumption before optimization
 total_power_before_optimization = calculate_total_power(model_machine1, model_machine2, [400] * 10, [625] * 10)
 
 # Calculate total power consumption after optimization
