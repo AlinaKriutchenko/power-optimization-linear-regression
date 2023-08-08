@@ -21,9 +21,6 @@ The chosen GPH ranges (180-600 and 300-1000) respected the machines' capabilitie
 **Objective Function**
 The main goal was to minimize power consumption while meeting the target GPH. Minimizing power aligns with energy conservation objectives, contributing to cost savings and reduced environmental impact.
 
-**Power Calculation**
-Using trained models to estimate power consumption during optimization ensured accurate predictions based on the relationships learned from the dataset. This approach reflected the real-world power usage of the machines.
-
 **Metric Selection**
 Mean Squared Error (MSE) was chosen to assess model accuracy. It quantifies the average squared difference between predicted and actual power, giving insight into how well the model predicts power values. MSE is a widely adopted metric in regression tasks.
 
@@ -44,17 +41,4 @@ The iterative approach was used to exhaustively search for optimal GPH values wi
 8. Model Complexity vs. Interpretability: Complex models might offer better accuracy but at the cost of interpretability.
 9. Real-World Feasibility: Optimized GPH values might not align with practical constraints or maintenance considerations.
 10. Unconsidered Factors: Factors like temperature, humidity, and maintenance schedules were omitted from the analysis.
-
-# Conclusions:
-**Optimal GPH Values:**
-- After optimization, the optimal Goods Per Hour (GPH) values were determined to minimize power consumption while achieving the target total GPH of 9,000 for the factory.
-- Optimal GPH for Machine Type #1: 600
-- Optimal GPH for Machine Type #2: 300
-
-**Total Power Consumption:**
-- The total power consumption of the factory was calculated using the optimized GPH values.
-- Total Power Consumption Before Optimization: 1874.42
-- Total Power Consumption After Optimization: 1521.94
-
-**Power Savings:**
-- By implementing the optimized GPH values, the factory achieved a power savings of 352.49 units.
+11. Dataset size
